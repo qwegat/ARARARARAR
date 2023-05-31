@@ -15,8 +15,10 @@
         <a-asset-item id="model" src="./asset/model.glb"></a-asset-item>
       </a-assets>
       <a-marker preset="hiro">
-        <a-entity rotation="-90 0 0" position="0 0 -1">
-          <a-entity gltf-model="#model" scale-"0.1 0.1 0.1" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear;"></a-entity>
+        <a-entity rotation="-90 0 0" position="0 0 -1" scale="0.1 0.1 0.1" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear;">
+          <a-entity gltf-model="#model">
+	     <a-entity gltf-model="#model" scale="1.05 1.05 1.05" material="shader: flat;color: black;side: back"></a-entity>
+	  </a-entity>
         </a-entity>
       </a-marker>
       <a-entity light="type: ambient; color: #ffffff; intensity: 5" position="1 -1 0"></a-entity>
