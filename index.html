@@ -9,14 +9,18 @@
     <title>竹園高校AR</title>
   </head>
   <body style="margin: 0; overflow: hidden">
-    <a-scene embedded arjs vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
+    <a-scene embedded arjs="debugUIEnabled:false; patternRatio: 0.5" vr-mode-ui="enabled: false">
 	    
       <a-assets>
         <a-asset-item id="model" src="./asset/model.glb"></a-asset-item>
       </a-assets>
       <a-marker preset="hiro">
-        <a-entity gltf-model="#model" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
+        <a-entity rotation="-90 0 0" position="0 1 0">
+          <a-entity scale="0.03 0.03 0.03" gltf-model="#model" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear;"></a-entity>
+        </a-entity>
       </a-marker>
+      <a-entity light="type: ambient; color: #ffffff; intensity: 5" position="1 -1 0"></a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
