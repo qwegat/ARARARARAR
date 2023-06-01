@@ -9,21 +9,21 @@
   <body style="margin: 0; overflow: hidden">
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false" ">
+    <script src="https://rawgit.com/takahirox/aframe-outline/master/build/aframe-outline.min.js"></script>
+    <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false" outline>
 	    
       <a-assets>
         <a-asset-item id="model" src="./asset/model.glb"></a-asset-item>
       </a-assets>
       <a-marker preset="hiro">
         <a-entity rotation="0 0 0" position="0 1 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear;">
-          <a-entity gltf-model="#model" scale="2.5 2.5 2.5">
+          <a-entity gltf-model="#model" scale="2 2 2">
 	     
 	  </a-entity>
-	  <a-entity gltf-model="#model" scale="2.55 2.55 2.55" material="shader: flat;color: black;side: back"></a-entity>
         </a-entity>
+        <a-entity light="type: ambient; color: #ffffff; intensity: 10" position="4 4 0"></a-entity>
+        <a-entity camera></a-entity>
       </a-marker>
-      <a-entity light="type: ambient; color: #ffffff; intensity: 5" position="1 -1 0"></a-entity>
-      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
